@@ -1,0 +1,986 @@
+[
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VIAN)(Boris)(elles se rendent pas compte)(1)(1950)(1920)(1959)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(VIAN)(Boris)(elles se rendent pas compte)(1)(1950)(1920)(1959)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 30,
+    "author": "Boris VIAN",
+    "title": "elles se rendent pas compte",
+    "publication_year": 1950
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(LARBAUD)(Valery)(fermina marquez)(1)(1911)(1881)(1957)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(LARBAUD)(Valery)(fermina marquez)(1)(1911)(1881)(1957)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 30,
+    "author": "Valery LARBAUD",
+    "title": "fermina marquez",
+    "publication_year": 1911
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SAND)(George)(le secre╠ütaire intime)(2)(1834)(1804)(1876)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SAND)(George)(le secre╠ütaire intime)(2)(1834)(1804)(1876)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 30,
+    "author": "George SAND",
+    "title": "le secre╠ütaire intime",
+    "publication_year": 1834
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SENECAL)(Patrick)(sur le seuil)(1)(1998)(1967)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SENECAL)(Patrick)(sur le seuil)(1)(1998)(1967)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 31,
+    "author": "Patrick SENECAL",
+    "title": "sur le seuil",
+    "publication_year": 1998
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(DE SAINT-EXUPERY)(Antoine)(vol de nuit)(1)(1931)(1900)(1944)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(DE SAINT-EXUPERY)(Antoine)(vol de nuit)(1)(1931)(1900)(1944)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 31,
+    "author": "Antoine DE SAINT-EXUPERY",
+    "title": "vol de nuit",
+    "publication_year": 1931
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(POSTEL)(Alexandre)(un homme efface╠ü)(1)(2013)(1982)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(POSTEL)(Alexandre)(un homme efface╠ü)(1)(2013)(1982)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 31,
+    "author": "Alexandre POSTEL",
+    "title": "un homme efface╠ü",
+    "publication_year": 2013
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SARDOU)(Romain)(personne n'y e╠üchaperra)(1)(2006)(1974)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SARDOU)(Romain)(personne n'y e╠üchaperra)(1)(2006)(1974)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 32,
+    "author": "Romain SARDOU",
+    "title": "personne n'y e╠üchaperra",
+    "publication_year": 2006
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(HUGO)(Victor)(claude gueux)(1)(1834)(1802)(1885)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(HUGO)(Victor)(claude gueux)(1)(1834)(1802)(1885)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 32,
+    "author": "Victor HUGO",
+    "title": "claude gueux",
+    "publication_year": 1834
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(MODIANO)(Patrick)(livret de famille)(1)(1977)(1945)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(MODIANO)(Patrick)(livret de famille)(1)(1977)(1945)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 32,
+    "author": "Patrick MODIANO",
+    "title": "livret de famille",
+    "publication_year": 1977
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VALOGNES)(Aure╠ülie)(nos adorables belles filles)(2)(2016)(1983)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(VALOGNES)(Aure╠ülie)(nos adorables belles filles)(2)(2016)(1983)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 33,
+    "author": "Aure╠ülie VALOGNES",
+    "title": "nos adorables belles filles",
+    "publication_year": 2016
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(HONAKER)(Michel)(dark spirit)(1)(1991)(1958)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(HONAKER)(Michel)(dark spirit)(1)(1991)(1958)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 33,
+    "author": "Michel HONAKER",
+    "title": "dark spirit",
+    "publication_year": 1991
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SANDRE)(Thierry)(Mienne)(1)(1923)(1890)(1950)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SANDRE)(Thierry)(Mienne)(1)(1923)(1890)(1950)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 33,
+    "author": "Thierry SANDRE",
+    "title": "Mienne",
+    "publication_year": 1923
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(NICOLE)(Gustave)(Voyage des souverains- Inauguration du Canal de Suez)(1)(1869)(1835)(1900)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(NICOLE)(Gustave)(Voyage des souverains- Inauguration du Canal de Suez)(1)(1869)(1835)(1900)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 34,
+    "author": "Gustave NICOLE",
+    "title": "Voyage des souverains- Inauguration du Canal de Suez",
+    "publication_year": 1869
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(FARGUES)(Nicolas)(j'e╠ütais derrie╠Çre toi)(1)(2006)(1972)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(FARGUES)(Nicolas)(j'e╠ütais derrie╠Çre toi)(1)(2006)(1972)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 34,
+    "author": "Nicolas FARGUES",
+    "title": "j'e╠ütais derrie╠Çre toi",
+    "publication_year": 2006
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(GRANIER DE CASSAGNAC)(Adolphe)(Danae╠ê)(1)(1840)(1806)(1880)(fr)(z)(z)(V)(R)(HI)(T).txt",
+    "filename": "(GRANIER DE CASSAGNAC)(Adolphe)(Danae╠ê)(1)(1840)(1806)(1880)(fr)(z)(z)(V)(R)(HI)(T).txt",
+    "age": 34,
+    "author": "Adolphe GRANIER DE CASSAGNAC",
+    "title": "Danae╠ê",
+    "publication_year": 1840
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VERNIER)(Paul)(la chasse aux nihilistes)(1)(1880)(1845)(0)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "filename": "(VERNIER)(Paul)(la chasse aux nihilistes)(1)(1880)(1845)(0)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "age": 35,
+    "author": "Paul VERNIER",
+    "title": "la chasse aux nihilistes",
+    "publication_year": 1880
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(GRACQ)(Julien)(un beau te╠üne╠übreux)(1)(1945)(1910)(2007)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(GRACQ)(Julien)(un beau te╠üne╠übreux)(1)(1945)(1910)(2007)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 35,
+    "author": "Julien GRACQ",
+    "title": "un beau te╠üne╠übreux",
+    "publication_year": 1945
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SANDRE)(Thierry)(Le Purgatoire)(1)(1925)(1890)(1950)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SANDRE)(Thierry)(Le Purgatoire)(1)(1925)(1890)(1950)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 35,
+    "author": "Thierry SANDRE",
+    "title": "Le Purgatoire",
+    "publication_year": 1925
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VERNES)(Henri)(la gale╠Çre engloutie)(1)(1954)(1918)(2021)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(VERNES)(Henri)(la gale╠Çre engloutie)(1)(1954)(1918)(2021)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 36,
+    "author": "Henri VERNES",
+    "title": "la gale╠Çre engloutie",
+    "publication_year": 1954
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(FEUILLET)(Octave)(la petite comtesse)(1)(1857)(1821)(1890)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(FEUILLET)(Octave)(la petite comtesse)(1)(1857)(1821)(1890)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 36,
+    "author": "Octave FEUILLET",
+    "title": "la petite comtesse",
+    "publication_year": 1857
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(LEMAY)(Gaston)(A bord de la Junon)(1)(1879)(1843)(1933)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(LEMAY)(Gaston)(A bord de la Junon)(1)(1879)(1843)(1933)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 36,
+    "author": "Gaston LEMAY",
+    "title": "A bord de la Junon",
+    "publication_year": 1879
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SULITZER)(Paul-Loup)(le roi vert)(1)(1983)(1946)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SULITZER)(Paul-Loup)(le roi vert)(1)(1983)(1946)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 37,
+    "author": "Paul-Loup SULITZER",
+    "title": "le roi vert",
+    "publication_year": 1983
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(GREVILE)(Henry)(lucie rodey)(2)(1879)(1842)(1902)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(GREVILE)(Henry)(lucie rodey)(2)(1879)(1842)(1902)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 37,
+    "author": "Henry GREVILE",
+    "title": "lucie rodey",
+    "publication_year": 1879
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(PERRO)(Bryan)(la grande croisade)(1)(2005)(1968)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(PERRO)(Bryan)(la grande croisade)(1)(2005)(1968)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 37,
+    "author": "Bryan PERRO",
+    "title": "la grande croisade",
+    "publication_year": 2005
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VERNES)(Henri)(la croisie╠Çre du me╠ügophias)(1)(1956)(1918)(2021)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(VERNES)(Henri)(la croisie╠Çre du me╠ügophias)(1)(1956)(1918)(2021)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 38,
+    "author": "Henri VERNES",
+    "title": "la croisie╠Çre du me╠ügophias",
+    "publication_year": 1956
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(MAZLOUM)(Diane)(l'a╠ége d'or)(2)(2018)(1980)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(MAZLOUM)(Diane)(l'a╠ége d'or)(2)(2018)(1980)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 38,
+    "author": "Diane MAZLOUM",
+    "title": "l'a╠ége d'or",
+    "publication_year": 2018
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VASSET)(Philippe)(journal intime d'une pre╠üdatrice)(1)(2010)(1972)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(VASSET)(Philippe)(journal intime d'une pre╠üdatrice)(1)(2010)(1972)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 38,
+    "author": "Philippe VASSET",
+    "title": "journal intime d'une pre╠üdatrice",
+    "publication_year": 2010
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(TISSOT)(Victor)(La police secre╠Çte prussienne)(1)(1884)(1845)(1917)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(TISSOT)(Victor)(La police secre╠Çte prussienne)(1)(1884)(1845)(1917)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 39,
+    "author": "Victor TISSOT",
+    "title": "La police secre╠Çte prussienne",
+    "publication_year": 1884
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(ORIANO)(Janine)(b comme baptiste)(2)(1971)(1932)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(ORIANO)(Janine)(b comme baptiste)(2)(1971)(1932)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 39,
+    "author": "Janine ORIANO",
+    "title": "b comme baptiste",
+    "publication_year": 1971
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SIMENON)(Georges)(menaces de mort)(1)(1942)(1903)(1989)(fr)(z)(z)(V)(N)(NN)(T).txt",
+    "filename": "(SIMENON)(Georges)(menaces de mort)(1)(1942)(1903)(1989)(fr)(z)(z)(V)(N)(NN)(T).txt",
+    "age": 39,
+    "author": "Georges SIMENON",
+    "title": "menaces de mort",
+    "publication_year": 1942
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VAN DER LINDEN)(Sophie)(la fabrique du monde)(2)(2013)(1973)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(VAN DER LINDEN)(Sophie)(la fabrique du monde)(2)(2013)(1973)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 40,
+    "author": "Sophie VAN DER LINDEN",
+    "title": "la fabrique du monde",
+    "publication_year": 2013
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(LENORMAND)(Fre╠üde╠üric)(petits meurtres entre moines)(1)(2004)(1964)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(LENORMAND)(Fre╠üde╠üric)(petits meurtres entre moines)(1)(2004)(1964)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 40,
+    "author": "Fre╠üde╠üric LENORMAND",
+    "title": "petits meurtres entre moines",
+    "publication_year": 2004
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SIGNOL)(Christian)(les chemins d'e╠ütoiles)(1)(1987)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SIGNOL)(Christian)(les chemins d'e╠ütoiles)(1)(1987)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 40,
+    "author": "Christian SIGNOL",
+    "title": "les chemins d'e╠ütoiles",
+    "publication_year": 1987
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SIGNOL)(Christian)(les amandiers fleurissaient rouge)(1)(1988)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SIGNOL)(Christian)(les amandiers fleurissaient rouge)(1)(1988)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 41,
+    "author": "Christian SIGNOL",
+    "title": "les amandiers fleurissaient rouge",
+    "publication_year": 1988
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(GREVILE)(Henry)(le voeu de nadia)(2)(1883)(1842)(1902)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(GREVILE)(Henry)(le voeu de nadia)(2)(1883)(1842)(1902)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 41,
+    "author": "Henry GREVILE",
+    "title": "le voeu de nadia",
+    "publication_year": 1883
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(PERRO)(Bryan)(les enfants de bo╠êrte tchino╠ê)(1)(2009)(1968)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(PERRO)(Bryan)(les enfants de bo╠êrte tchino╠ê)(1)(2009)(1968)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 41,
+    "author": "Bryan PERRO",
+    "title": "les enfants de bo╠êrte tchino╠ê",
+    "publication_year": 2009
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VARGAS)(Fred)(l'homme a╠Ç l'envers)(2)(1999)(1957)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(VARGAS)(Fred)(l'homme a╠Ç l'envers)(2)(1999)(1957)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 42,
+    "author": "Fred VARGAS",
+    "title": "l'homme a╠Ç l'envers",
+    "publication_year": 1999
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(GARY)(Romain)(les racines du ciel)(1)(1956)(1914)(1980)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(GARY)(Romain)(les racines du ciel)(1)(1956)(1914)(1980)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 42,
+    "author": "Romain GARY",
+    "title": "les racines du ciel",
+    "publication_year": 1956
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(REY)(Franc╠ºoise)(la rencontre)(2)(1993)(1951)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(REY)(Franc╠ºoise)(la rencontre)(2)(1993)(1951)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 42,
+    "author": "Franc╠ºoise REY",
+    "title": "la rencontre",
+    "publication_year": 1993
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(NOTHOMB)(Ame╠ülie)(le voyage d'hiver)(2)(2009)(1966)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(NOTHOMB)(Ame╠ülie)(le voyage d'hiver)(2)(2009)(1966)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 43,
+    "author": "Ame╠ülie NOTHOMB",
+    "title": "le voyage d'hiver",
+    "publication_year": 2009
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(DOUX)(Samuel)(l'e╠üternite╠ü de xavier dupont de ligonne╠Çs)(1)(2017)(1974)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(DOUX)(Samuel)(l'e╠üternite╠ü de xavier dupont de ligonne╠Çs)(1)(2017)(1974)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 43,
+    "author": "Samuel DOUX",
+    "title": "l'e╠üternite╠ü de xavier dupont de ligonne╠Çs",
+    "publication_year": 2017
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(GUEZ)(Olivier)(la disparition de josef mengele)(1)(2017)(1974)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(GUEZ)(Olivier)(la disparition de josef mengele)(1)(2017)(1974)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 43,
+    "author": "Olivier GUEZ",
+    "title": "la disparition de josef mengele",
+    "publication_year": 2017
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VARGAS)(Fred)(pars vite et reviens tard)(2)(2001)(1957)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(VARGAS)(Fred)(pars vite et reviens tard)(2)(2001)(1957)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 44,
+    "author": "Fred VARGAS",
+    "title": "pars vite et reviens tard",
+    "publication_year": 2001
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(FERRY)(Gabriel)(le coureur des bois ou les chercheurs d'or tome 2)(1)(1853)(1809)(1852)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "filename": "(FERRY)(Gabriel)(le coureur des bois ou les chercheurs d'or tome 2)(1)(1853)(1809)(1852)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "age": 44,
+    "author": "Gabriel FERRY",
+    "title": "le coureur des bois ou les chercheurs d'or tome 2",
+    "publication_year": 1853
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(MERLE)(Robert)(la mort est mon me╠ütier)(1)(1952)(1908)(2004)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(MERLE)(Robert)(la mort est mon me╠ütier)(1)(1952)(1908)(2004)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 44,
+    "author": "Robert MERLE",
+    "title": "la mort est mon me╠ütier",
+    "publication_year": 1952
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(ZACCONE)(Pierre)(une haine au bagne)(1)(1863)(1818)(1895)(fr)(z)(z)(V)(R)(PO)(T).txt",
+    "filename": "(ZACCONE)(Pierre)(une haine au bagne)(1)(1863)(1818)(1895)(fr)(z)(z)(V)(R)(PO)(T).txt",
+    "age": 45,
+    "author": "Pierre ZACCONE",
+    "title": "une haine au bagne",
+    "publication_year": 1863
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(GIRAUDOUX)(Jean)(e╠üglantine)(1)(1927)(1882)(1944)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(GIRAUDOUX)(Jean)(e╠üglantine)(1)(1927)(1882)(1944)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 45,
+    "author": "Jean GIRAUDOUX",
+    "title": "e╠üglantine",
+    "publication_year": 1927
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(RUFIN)(Jean-Christophe)(l'abyssin)(1)(1997)(1952)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(RUFIN)(Jean-Christophe)(l'abyssin)(1)(1997)(1952)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 45,
+    "author": "Jean-Christophe RUFIN",
+    "title": "l'abyssin",
+    "publication_year": 1997
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SINNO)(Neige)(Triste Tigre)(2)(2023)(1977)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SINNO)(Neige)(Triste Tigre)(2)(2023)(1977)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 46,
+    "author": "Neige SINNO",
+    "title": "Triste Tigre",
+    "publication_year": 2023
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(LEMIEUX)(Jean)(la marche du fou)(1)(2000)(1954)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(LEMIEUX)(Jean)(la marche du fou)(1)(2000)(1954)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 46,
+    "author": "Jean LEMIEUX",
+    "title": "la marche du fou",
+    "publication_year": 2000
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(RUFIN)(Jean-Christophe)(sauver ispahan)(1)(1998)(1952)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(RUFIN)(Jean-Christophe)(sauver ispahan)(1)(1998)(1952)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 46,
+    "author": "Jean-Christophe RUFIN",
+    "title": "sauver ispahan",
+    "publication_year": 1998
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(TUIL)(Karine)(les Choses humaines)(2)(2019)(1972)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(TUIL)(Karine)(les Choses humaines)(2)(2019)(1972)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 47,
+    "author": "Karine TUIL",
+    "title": "les Choses humaines",
+    "publication_year": 2019
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(MARY)(Jules)(la pocharde)(1)(1898)(1851)(1922)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(MARY)(Jules)(la pocharde)(1)(1898)(1851)(1922)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 47,
+    "author": "Jules MARY",
+    "title": "la pocharde",
+    "publication_year": 1898
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SCHLESSER)(Thomas)(les Yeux de Mona)(1)(2024)(1977)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SCHLESSER)(Thomas)(les Yeux de Mona)(1)(2024)(1977)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 47,
+    "author": "Thomas SCHLESSER",
+    "title": "les Yeux de Mona",
+    "publication_year": 2024
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(TOUSSAINT)(Jean-Philippe)(fuir)(1)(2005)(1957)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(TOUSSAINT)(Jean-Philippe)(fuir)(1)(2005)(1957)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 48,
+    "author": "Jean-Philippe TOUSSAINT",
+    "title": "fuir",
+    "publication_year": 2005
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(LENORMAND)(Fre╠üde╠üric)(meurtre dans le boudoir)(1)(2012)(1964)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(LENORMAND)(Fre╠üde╠üric)(meurtre dans le boudoir)(1)(2012)(1964)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 48,
+    "author": "Fre╠üde╠üric LENORMAND",
+    "title": "meurtre dans le boudoir",
+    "publication_year": 2012
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SIMENON)(Georges)(maigret au picratt's)(1)(1951)(1903)(1989)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SIMENON)(Georges)(maigret au picratt's)(1)(1951)(1903)(1989)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 48,
+    "author": "Georges SIMENON",
+    "title": "maigret au picratt's",
+    "publication_year": 1951
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VAN CAUWELAERT)(Didier)(la maison des lumie╠Çres)(1)(2009)(1960)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(VAN CAUWELAERT)(Didier)(la maison des lumie╠Çres)(1)(2009)(1960)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 49,
+    "author": "Didier VAN CAUWELAERT",
+    "title": "la maison des lumie╠Çres",
+    "publication_year": 2009
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(MALTE)(Marcus)(le garc╠ºon)(1)(2016)(1967)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(MALTE)(Marcus)(le garc╠ºon)(1)(2016)(1967)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 49,
+    "author": "Marcus MALTE",
+    "title": "le garc╠ºon",
+    "publication_year": 2016
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SIMONIN)(Albert)(le cave se rebiffe)(1)(1954)(1905)(1980)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SIMONIN)(Albert)(le cave se rebiffe)(1)(1954)(1905)(1980)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 49,
+    "author": "Albert SIMONIN",
+    "title": "le cave se rebiffe",
+    "publication_year": 1954
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VIGNON)(Claude)(re╠üvolte╠üe)(2)(1878)(1828)(1884)(fr)(z)(z)(V)(R)(HI)(T).txt",
+    "filename": "(VIGNON)(Claude)(re╠üvolte╠üe)(2)(1878)(1828)(1884)(fr)(z)(z)(V)(R)(HI)(T).txt",
+    "age": 50,
+    "author": "Claude VIGNON",
+    "title": "re╠üvolte╠üe",
+    "publication_year": 1878
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(LAURRENT)(Eric)(un beau de╠übut)(1)(2016)(1966)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(LAURRENT)(Eric)(un beau de╠übut)(1)(2016)(1966)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 50,
+    "author": "Eric LAURRENT",
+    "title": "un beau de╠übut",
+    "publication_year": 2016
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SIMONIN)(Albert)(grisbi or not grisbi)(1)(1955)(1905)(1980)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SIMONIN)(Albert)(grisbi or not grisbi)(1)(1955)(1905)(1980)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 50,
+    "author": "Albert SIMONIN",
+    "title": "grisbi or not grisbi",
+    "publication_year": 1955
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(WIAZEMSKY)(Anne)(une poigne╠üe de gens)(2)(1998)(1947)(2017)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(WIAZEMSKY)(Anne)(une poigne╠üe de gens)(2)(1998)(1947)(2017)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 51,
+    "author": "Anne WIAZEMSKY",
+    "title": "une poigne╠üe de gens",
+    "publication_year": 1998
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(LUMINET)(Jean-Pierre)(le Ba╠éton d'Euclide)(1)(2002)(1951)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(LUMINET)(Jean-Pierre)(le Ba╠éton d'Euclide)(1)(2002)(1951)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 51,
+    "author": "Jean-Pierre LUMINET",
+    "title": "le Ba╠éton d'Euclide",
+    "publication_year": 2002
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SILVESTRE)(Armand)(rose de mai)(1)(1888)(1837)(1901)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "filename": "(SILVESTRE)(Armand)(rose de mai)(1)(1888)(1837)(1901)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "age": 51,
+    "author": "Armand SILVESTRE",
+    "title": "rose de mai",
+    "publication_year": 1888
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VERNE)(Jules)(la maison a╠Ç vapeur voyage a╠Ç travers l'inde septentrionale)(1)(1880)(1828)(1905)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(VERNE)(Jules)(la maison a╠Ç vapeur voyage a╠Ç travers l'inde septentrionale)(1)(1880)(1828)(1905)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 52,
+    "author": "Jules VERNE",
+    "title": "la maison a╠Ç vapeur voyage a╠Ç travers l'inde septentrionale",
+    "publication_year": 1880
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(JAUFFRET)(Re╠ügis)(microfictions)(1)(2007)(1955)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(JAUFFRET)(Re╠ügis)(microfictions)(1)(2007)(1955)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 52,
+    "author": "Re╠ügis JAUFFRET",
+    "title": "microfictions",
+    "publication_year": 2007
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SIGNOL)(Christian)(les che╠énes d'or)(1)(1999)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SIGNOL)(Christian)(les che╠énes d'or)(1)(1999)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 52,
+    "author": "Christian SIGNOL",
+    "title": "les che╠énes d'or",
+    "publication_year": 1999
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SUE)(Euge╠Çne)(Les myste╠Çres du peuple tome 5)(1)(1857)(1804)(1857)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SUE)(Euge╠Çne)(Les myste╠Çres du peuple tome 5)(1)(1857)(1804)(1857)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 53,
+    "author": "Euge╠Çne SUE",
+    "title": "Les myste╠Çres du peuple tome 5",
+    "publication_year": 1857
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(JAPP)(Andrea)(dans la te╠éte,le venin)(2)(2010)(1957)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(JAPP)(Andrea)(dans la te╠éte,le venin)(2)(2010)(1957)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 53,
+    "author": "Andrea JAPP",
+    "title": "dans la te╠éte,le venin",
+    "publication_year": 2010
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(ROY)(Nathalie)(pourquoi pars tu, alice)(2)(2017)(1964)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(ROY)(Nathalie)(pourquoi pars tu, alice)(2)(2017)(1964)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 53,
+    "author": "Nathalie ROY",
+    "title": "pourquoi pars tu, alice",
+    "publication_year": 2017
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SIMENON)(Georges)(maigret s'amuse)(1)(1957)(1903)(1989)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SIMENON)(Georges)(maigret s'amuse)(1)(1957)(1903)(1989)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 54,
+    "author": "Georges SIMENON",
+    "title": "maigret s'amuse",
+    "publication_year": 1957
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(GRANGE)(Jean-Christophe)(lontano)(1)(2015)(1961)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(GRANGE)(Jean-Christophe)(lontano)(1)(2015)(1961)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 54,
+    "author": "Jean-Christophe GRANGE",
+    "title": "lontano",
+    "publication_year": 2015
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(MERLE)(Robert)(l'ile)(1)(1962)(1908)(2004)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(MERLE)(Robert)(l'ile)(1)(1962)(1908)(2004)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 54,
+    "author": "Robert MERLE",
+    "title": "l'ile",
+    "publication_year": 1962
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SAND)(George)(l'homme de neige)(2)(1859)(1804)(1876)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SAND)(George)(l'homme de neige)(2)(1859)(1804)(1876)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 55,
+    "author": "George SAND",
+    "title": "l'homme de neige",
+    "publication_year": 1859
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(LAFON)(Marie-He╠üle╠Çne)(nos vies)(2)(2017)(1962)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(LAFON)(Marie-He╠üle╠Çne)(nos vies)(2)(2017)(1962)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 55,
+    "author": "Marie-He╠üle╠Çne LAFON",
+    "title": "nos vies",
+    "publication_year": 2017
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(RIVIERE)(Henri)(le combat de la vie tome 2)(1)(1882)(1827)(1883)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "filename": "(RIVIERE)(Henri)(le combat de la vie tome 2)(1)(1882)(1827)(1883)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "age": 55,
+    "author": "Henri RIVIERE",
+    "title": "le combat de la vie tome 2",
+    "publication_year": 1882
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SHIMAZAKI)(Aki)(tonbo)(2)(2010)(1954)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SHIMAZAKI)(Aki)(tonbo)(2)(2010)(1954)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 56,
+    "author": "Aki SHIMAZAKI",
+    "title": "tonbo",
+    "publication_year": 2010
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(HARAUCOURT)(Edmond)(Dieudonat)(1)(1912)(1856)(1941)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(HARAUCOURT)(Edmond)(Dieudonat)(1)(1912)(1856)(1941)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 56,
+    "author": "Edmond HARAUCOURT",
+    "title": "Dieudonat",
+    "publication_year": 1912
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(POULAIN)(Catherine)(le grand marin)(2)(2016)(1960)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(POULAIN)(Catherine)(le grand marin)(2)(2016)(1960)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 56,
+    "author": "Catherine POULAIN",
+    "title": "le grand marin",
+    "publication_year": 2016
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(TREMBLAY)(Michel)(hotel bristol)(1)(1999)(1942)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(TREMBLAY)(Michel)(hotel bristol)(1)(1999)(1942)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 57,
+    "author": "Michel TREMBLAY",
+    "title": "hotel bristol",
+    "publication_year": 1999
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(JAPP)(Andrea)(le tour d'abandon)(2)(2014)(1957)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(JAPP)(Andrea)(le tour d'abandon)(2)(2014)(1957)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 57,
+    "author": "Andrea JAPP",
+    "title": "le tour d'abandon",
+    "publication_year": 2014
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SAND)(George)(Valve╠Çdre)(2)(1861)(1804)(1876)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SAND)(George)(Valve╠Çdre)(2)(1861)(1804)(1876)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 57,
+    "author": "George SAND",
+    "title": "Valve╠Çdre",
+    "publication_year": 1861
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(ULBACH)(Louis)(le crime de Martial)(1)(1880)(1822)(1889)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "filename": "(ULBACH)(Louis)(le crime de Martial)(1)(1880)(1822)(1889)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "age": 58,
+    "author": "Louis ULBACH",
+    "title": "le crime de Martial",
+    "publication_year": 1880
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(FERLAND)(Jean-Baptiste-antoine)(Opuscules)(1)(1863)(1805)(1865)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(FERLAND)(Jean-Baptiste-antoine)(Opuscules)(1)(1863)(1805)(1865)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 58,
+    "author": "Jean-Baptiste-antoine FERLAND",
+    "title": "Opuscules",
+    "publication_year": 1863
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(REYBAUD)(Fanny)(mise╠ü brun)(2)(1860)(1802)(1870)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(REYBAUD)(Fanny)(mise╠ü brun)(2)(1860)(1802)(1870)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 58,
+    "author": "Fanny REYBAUD",
+    "title": "mise╠ü brun",
+    "publication_year": 1860
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SARRAUTE)(Nathalie)(le plane╠ütarium)(2)(1959)(1900)(1999)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SARRAUTE)(Nathalie)(le plane╠ütarium)(2)(1959)(1900)(1999)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 59,
+    "author": "Nathalie SARRAUTE",
+    "title": "le plane╠ütarium",
+    "publication_year": 1959
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(FEVAL)(Paul)(la bande cadet)(1)(1875)(1816)(1887)(fr)(z)(z)(V)(R)(PO)(T).txt",
+    "filename": "(FEVAL)(Paul)(la bande cadet)(1)(1875)(1816)(1887)(fr)(z)(z)(V)(R)(PO)(T).txt",
+    "age": 59,
+    "author": "Paul FEVAL",
+    "title": "la bande cadet",
+    "publication_year": 1875
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(LEMAITRE)(Pierre)(cadres noirs)(1)(2010)(1951)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(LEMAITRE)(Pierre)(cadres noirs)(1)(2010)(1951)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 59,
+    "author": "Pierre LEMAITRE",
+    "title": "cadres noirs",
+    "publication_year": 2010
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VARGAS)(Fred)(Quand sort la recluse)(2)(2017)(1957)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(VARGAS)(Fred)(Quand sort la recluse)(2)(2017)(1957)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 60,
+    "author": "Fred VARGAS",
+    "title": "Quand sort la recluse",
+    "publication_year": 2017
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(JACQ)(Christian)(la divine adoratrice)(1)(2007)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(JACQ)(Christian)(la divine adoratrice)(1)(2007)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 60,
+    "author": "Christian JACQ",
+    "title": "la divine adoratrice",
+    "publication_year": 2007
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(PANCOL)(Katherine)(muchachas)(2)(2014)(1954)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(PANCOL)(Katherine)(muchachas)(2)(2014)(1954)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 60,
+    "author": "Katherine PANCOL",
+    "title": "muchachas",
+    "publication_year": 2014
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(POIVRE D'ARVOR)(Patrick)(petit prince du de╠üsert)(1)(2008)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(POIVRE D'ARVOR)(Patrick)(petit prince du de╠üsert)(1)(2008)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 61,
+    "author": "Patrick POIVRE D'ARVOR",
+    "title": "petit prince du de╠üsert",
+    "publication_year": 2008
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(FOURNIER)(Jean-Louis)(il a jamais tue╠ü personne, mon papa)(1)(1999)(1938)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(FOURNIER)(Jean-Louis)(il a jamais tue╠ü personne, mon papa)(1)(1999)(1938)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 61,
+    "author": "Jean-Louis FOURNIER",
+    "title": "il a jamais tue╠ü personne, mon papa",
+    "publication_year": 1999
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(NICOL)(Alex)(du bois bande╠ü dans le chouchen)(1)(2015)(1954)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(NICOL)(Alex)(du bois bande╠ü dans le chouchen)(1)(2015)(1954)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 61,
+    "author": "Alex NICOL",
+    "title": "du bois bande╠ü dans le chouchen",
+    "publication_year": 2015
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(RUFIN)(Jean-Christophe)(le collier rouge)(1)(2014)(1952)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(RUFIN)(Jean-Christophe)(le collier rouge)(1)(2014)(1952)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 62,
+    "author": "Jean-Christophe RUFIN",
+    "title": "le collier rouge",
+    "publication_year": 2014
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(GOURAUD)(Julie)(le livre de maman)(2)(1872)(1810)(1891)(fr)(z)(z)(V)(R)(JE)(T).txt",
+    "filename": "(GOURAUD)(Julie)(le livre de maman)(2)(1872)(1810)(1891)(fr)(z)(z)(V)(R)(JE)(T).txt",
+    "age": 62,
+    "author": "Julie GOURAUD",
+    "title": "le livre de maman",
+    "publication_year": 1872
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(PECHEROT)(Patrick)(une plaie ouverte)(1)(2015)(1953)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(PECHEROT)(Patrick)(une plaie ouverte)(1)(2015)(1953)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 62,
+    "author": "Patrick PECHEROT",
+    "title": "une plaie ouverte",
+    "publication_year": 2015
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(QUIGNARD)(Pascal)(les solidarite╠üs myste╠ürieuses)(1)(2011)(1948)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(QUIGNARD)(Pascal)(les solidarite╠üs myste╠ürieuses)(1)(2011)(1948)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 63,
+    "author": "Pascal QUIGNARD",
+    "title": "les solidarite╠üs myste╠ürieuses",
+    "publication_year": 2011
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(HOUSSAYE)(Arse╠Çne)(les trois duchesses tome 1)(1)(1878)(1815)(1896)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "filename": "(HOUSSAYE)(Arse╠Çne)(les trois duchesses tome 1)(1)(1878)(1815)(1896)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "age": 63,
+    "author": "Arse╠Çne HOUSSAYE",
+    "title": "les trois duchesses tome 1",
+    "publication_year": 1878
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(MALOT)(Hector)(en famille)(1)(1893)(1830)(1907)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(MALOT)(Hector)(en famille)(1)(1893)(1830)(1907)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 63,
+    "author": "Hector MALOT",
+    "title": "en famille",
+    "publication_year": 1893
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VERNE)(Jules)(le cha╠éteau des Carpathes)(1)(1892)(1828)(1905)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(VERNE)(Jules)(le cha╠éteau des Carpathes)(1)(1892)(1828)(1905)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 64,
+    "author": "Jules VERNE",
+    "title": "le cha╠éteau des Carpathes",
+    "publication_year": 1892
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(EXBRAYAT)(Charles)(un bien bel homme)(1)(1970)(1906)(1989)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(EXBRAYAT)(Charles)(un bien bel homme)(1)(1970)(1906)(1989)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 64,
+    "author": "Charles EXBRAYAT",
+    "title": "un bien bel homme",
+    "publication_year": 1970
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(RAMBAUD)(Patrick)(quatrie╠Çme chronique du re╠Çgne de nicolas ier)(1)(2010)(1946)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(RAMBAUD)(Patrick)(quatrie╠Çme chronique du re╠Çgne de nicolas ier)(1)(2010)(1946)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 64,
+    "author": "Patrick RAMBAUD",
+    "title": "quatrie╠Çme chronique du re╠Çgne de nicolas ier",
+    "publication_year": 2010
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(THIERY)(Danielle)(des clous dans le c┼ôur)(2)(2012)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(THIERY)(Danielle)(des clous dans le c┼ôur)(2)(2012)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 65,
+    "author": "Danielle THIERY",
+    "title": "des clous dans le c┼ôur",
+    "publication_year": 2012
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(GALOPIN)(Arnould)(le bacille)(1)(1928)(1863)(1934)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(GALOPIN)(Arnould)(le bacille)(1)(1928)(1863)(1934)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 65,
+    "author": "Arnould GALOPIN",
+    "title": "le bacille",
+    "publication_year": 1928
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(QUEFFELEC)(Yann)(de╠üsirable)(1)(2014)(1949)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(QUEFFELEC)(Yann)(de╠üsirable)(1)(2014)(1949)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 65,
+    "author": "Yann QUEFFELEC",
+    "title": "de╠üsirable",
+    "publication_year": 2014
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SIGNOL)(Christian)(tout l'amour de nos pe╠Çres)(1)(2013)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SIGNOL)(Christian)(tout l'amour de nos pe╠Çres)(1)(2013)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 66,
+    "author": "Christian SIGNOL",
+    "title": "tout l'amour de nos pe╠Çres",
+    "publication_year": 2013
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(HADDAD)(Hubert)(le peintre d'e╠üventail)(1)(2013)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(HADDAD)(Hubert)(le peintre d'e╠üventail)(1)(2013)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 66,
+    "author": "Hubert HADDAD",
+    "title": "le peintre d'e╠üventail",
+    "publication_year": 2013
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(RAGON)(Michel)(la Me╠ümoire des vaincus)(1)(1990)(1924)(2020)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(RAGON)(Michel)(la Me╠ümoire des vaincus)(1)(1990)(1924)(2020)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 66,
+    "author": "Michel RAGON",
+    "title": "la Me╠ümoire des vaincus",
+    "publication_year": 1990
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SIMENON)(Georges)(la folle de maigret)(1)(1970)(1903)(1989)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SIMENON)(Georges)(la folle de maigret)(1)(1970)(1903)(1989)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 67,
+    "author": "Georges SIMENON",
+    "title": "la folle de maigret",
+    "publication_year": 1970
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(JACQ)(Christian)(meurtre sur invitation)(1)(2014)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(JACQ)(Christian)(meurtre sur invitation)(1)(2014)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 67,
+    "author": "Christian JACQ",
+    "title": "meurtre sur invitation",
+    "publication_year": 2014
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(QUINT)(Michel)(apaise le temps)(1)(2016)(1949)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(QUINT)(Michel)(apaise le temps)(1)(2016)(1949)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 67,
+    "author": "Michel QUINT",
+    "title": "apaise le temps",
+    "publication_year": 2016
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(VERNE)(Jules)(Clovis Dardentor)(1)(1896)(1828)(1905)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "filename": "(VERNE)(Jules)(Clovis Dardentor)(1)(1896)(1828)(1905)(fr)(z)(z)(V)(R)(RO)(T).txt",
+    "age": 68,
+    "author": "Jules VERNE",
+    "title": "Clovis Dardentor",
+    "publication_year": 1896
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(LABRUNE)(Jeanne)(depuis la terre, regarder les naufrages)(2)(2018)(1950)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(LABRUNE)(Jeanne)(depuis la terre, regarder les naufrages)(2)(2018)(1950)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 68,
+    "author": "Jeanne LABRUNE",
+    "title": "depuis la terre, regarder les naufrages",
+    "publication_year": 2018
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(PELOT)(Pierre)(la ville ou╠Ç les morts dansent toute leur vie)(1)(2013)(1945)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(PELOT)(Pierre)(la ville ou╠Ç les morts dansent toute leur vie)(1)(2013)(1945)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 68,
+    "author": "Pierre PELOT",
+    "title": "la ville ou╠Ç les morts dansent toute leur vie",
+    "publication_year": 2013
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(THIERY)(Danielle)(de╠ürapages)(2)(2016)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(THIERY)(Danielle)(de╠ürapages)(2)(2016)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 69,
+    "author": "Danielle THIERY",
+    "title": "de╠ürapages",
+    "publication_year": 2016
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(HATZFELD)(Jean)(deux me╠Çtres dix)(1)(2018)(1949)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(HATZFELD)(Jean)(deux me╠Çtres dix)(1)(2018)(1949)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 69,
+    "author": "Jean HATZFELD",
+    "title": "deux me╠Çtres dix",
+    "publication_year": 2018
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(RONDEAU)(Daniel)(me╠ücaniques du chaos)(1)(2017)(1948)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(RONDEAU)(Daniel)(me╠ücaniques du chaos)(1)(2017)(1948)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 69,
+    "author": "Daniel RONDEAU",
+    "title": "me╠ücaniques du chaos",
+    "publication_year": 2017
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(SHAMIR)(Igal)(le violon d'hitler)(1)(2008)(1938)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(SHAMIR)(Igal)(le violon d'hitler)(1)(2008)(1938)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 70,
+    "author": "Igal SHAMIR",
+    "title": "le violon d'hitler",
+    "publication_year": 2008
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(FOURNIER)(Jean-Louis)(ou╠Ç on va, papa)(1)(2008)(1938)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(FOURNIER)(Jean-Louis)(ou╠Ç on va, papa)(1)(2008)(1938)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 70,
+    "author": "Jean-Louis FOURNIER",
+    "title": "ou╠Ç on va, papa",
+    "publication_year": 2008
+  },
+  {
+    "filepath": "C:\\Users\\DELL\\Documents\\TER\\corpus_age_etudiant\\corpus_age_etudiant\\(PAGAN)(Hugues)(profil perdu)(1)(2017)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "filename": "(PAGAN)(Hugues)(profil perdu)(1)(2017)(1947)(v)(fr)(z)(z)(V)(R)(RR)(T).txt",
+    "age": 70,
+    "author": "Hugues PAGAN",
+    "title": "profil perdu",
+    "publication_year": 2017
+  }
+]
