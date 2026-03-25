@@ -89,7 +89,7 @@ class ModelConfig:
     num_filters: int = 64
     pool_size: int = 2                # MaxPool1d takes 1 out of every 2
     num_conv_layers: int = 3          # Conv1d+MaxPool layers stacked per branch
-    dropout: float = 0.3
+    dropout: float = 0.1
 
 
 # ── Training config ───────────────────────────────────────────────────────────
