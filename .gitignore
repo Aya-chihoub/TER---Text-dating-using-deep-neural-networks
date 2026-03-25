@@ -1,0 +1,30 @@
+# Large data files
+corpus_age_etudiant.zip
+corpus_age_etudiant/
+lists/Lexique4_syllabes/
+lists/Demonext_3_*/
+lists/morpholex-fr-suffix/
+
+# Generated PDFs
+*.pdf
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+.cursor/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Experiments (generated)
+experiments/*.json

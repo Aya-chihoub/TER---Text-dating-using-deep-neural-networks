@@ -39,8 +39,8 @@ class DataConfig:
     corpus_dir: str = CORPUS_DIR
     n_test_per_age: int = 3           # fixed number of texts per age held for test
     random_seed: int = 42
-    sequence_length: int = 512        # number of words per sample
-    stride: int = 256                 # sliding window stride (for extracting multiple samples per text)
+    sequence_length: int = 1000       # number of words per sample
+    stride: int = 500                 # sliding window stride (for extracting multiple samples per text)
     min_age: int = MIN_AGE
     max_age: int = MAX_AGE
 
@@ -64,17 +64,17 @@ class FeatureConfig:
         """Compute the total feature vector dimension based on enabled groups."""
         dim = 0
         if self.use_frequency:
-            dim += 3    # freq_in_text, log_freq, freq_rank
+            dim += 4    # freq_in_text, log_freq, freq_rank, global_freq
         if self.use_word_length:
             dim += 2    # word_length, syllable_count
         if self.use_char_composition:
             dim += 2    # vowel_ratio, accent_type
         if self.use_lexical:
-            dim += 4    # is_stop_word, punctuation_type, prefix_code, suffix_code
+            dim += 2    # punctuation_type, pos_tag
         if self.use_positional:
             dim += 3    # pos_in_sentence, sentence_length, is_sentence_boundary
         if self.use_context:
-            dim += 2    # local_punct_density, followed_by_punct
+            dim += 1    # adjacent_to_period
         return dim
 
 
@@ -82,13 +82,14 @@ class FeatureConfig:
 
 @dataclass
 class ModelConfig:
-    """Configuration for the temporal 1D CNN."""
-    feature_dim: int = 16             # will be set from FeatureConfig.feature_dim
+    """Configuration for the multi-branch 1D CNN (3 branches × 3 layers)."""
+    feature_dim: int = 14             # will be set from FeatureConfig.feature_dim
     num_classes: int = NUM_CLASSES
-    kernel_sizes: List[int] = field(default_factory=lambda: [3, 5, 7])
+    kernel_sizes: List[int] = field(default_factory=lambda: [3, 7, 13])
     num_filters: int = 64
+    pool_size: int = 2                # MaxPool1d takes 1 out of every 2
+    num_conv_layers: int = 3          # Conv1d+MaxPool layers stacked per branch
     dropout: float = 0.3
-    num_conv_layers: int = 1          # number of stacked conv layers per branch
 
 
 # ── Training config ───────────────────────────────────────────────────────────

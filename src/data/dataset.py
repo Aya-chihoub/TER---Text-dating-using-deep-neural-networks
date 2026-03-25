@@ -14,6 +14,7 @@ previously saved train/test split.
 from __future__ import annotations
 
 import os
+from collections import Counter
 from typing import List, Optional, Tuple
 
 import numpy as np
@@ -120,6 +121,15 @@ def build_datasets(
 
     if test_stride is None:
         test_stride = sequence_length   # no overlap for test
+
+    # Pre-compute global word frequencies from the training corpus
+    print("Computing global word frequencies from training corpus ...")
+    global_freq: Counter = Counter()
+    for meta in train_entries:
+        text = load_text(meta.filepath)
+        global_freq.update(t.lower() for t in text.split())
+    extractor.set_global_freq(global_freq)
+    print(f"  → {len(global_freq)} unique words, {sum(global_freq.values())} total tokens")
 
     print(f"Building train dataset ({len(train_entries)} texts, "
           f"seq_len={sequence_length}, stride={train_stride}) ...")
