@@ -11,7 +11,7 @@ from typing import List, Optional
 # ── Paths ─────────────────────────────────────────────────────────────────────
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-CORPUS_DIR = os.path.join(PROJECT_ROOT, "corpus_age_etudiant", "corpus_age_etudiant")
+CORPUS_DIR = os.path.join(PROJECT_ROOT, "corpus_age_etudiant")
 EXPERIMENTS_DIR = os.path.join(PROJECT_ROOT, "experiments")
 
 # ── Lists / external resources ────────────────────────────────────────────

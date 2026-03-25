@@ -28,3 +28,4 @@ Thumbs.db
 
 # Experiments (generated)
 experiments/*.json
+experiments/
