@@ -1,64 +1,56 @@
 """
 Train/test splitting utilities.
 
-The test corpus must have a fixed number of texts per age and must NEVER
-be used for training.  Two modes are supported:
-
-  Option A – This corpus is the only data: split each age's 30 texts into
-             train / test subsets (stratified).
-  Option B – A separate training corpus exists: this entire corpus = test set.
+Splits the corpus into three distinct sets:
+  1. Train (85% of the 90% block) - Used to train the model.
+  2. Validation (15% of the 90% block) - Used for early stopping.
+  3. Test (10% overall) - NEVER used during training; final evaluation only.
 """
 
 import os
 import json
-from collections import defaultdict
-from typing import Dict, List, Tuple
-
+from typing import List, Tuple
 from sklearn.model_selection import train_test_split
-
 from src.data.parser import TextMetadata
 
-
-def stratified_split(
+def split_train_val_test(
     entries: List[TextMetadata],
-    n_test_per_age: int = 3,
+    test_size: float = 0.10,
+    val_size: float = 0.15,
     random_seed: int = 42,
-) -> Tuple[List[TextMetadata], List[TextMetadata]]:
+) -> Tuple[List[TextMetadata], List[TextMetadata], List[TextMetadata]]:
     """
-    Split the corpus into train and test sets, stratified by age.
-
-    For each age, exactly `n_test_per_age` texts are assigned to the test set
-    (e.g. 3 test, 27 train out of 30).
-
-    Returns (train_entries, test_entries).
+    Split the corpus into Train, Validation, and Test sets, stratified by age.
     """
-    by_age: Dict[int, List[TextMetadata]] = defaultdict(list)
-    for m in entries:
-        by_age[m.age].append(m)
+    # Extract ages to ensure we stratify (balance) the ages in all splits
+    ages = [m.age for m in entries]
 
-    train_all, test_all = [], []
+    # Step 1: Carve out the 10% Final Test Set
+    train_val_entries, test_entries = train_test_split(
+        entries, 
+        test_size=test_size, 
+        stratify=ages, 
+        random_state=random_seed
+    )
 
-    for age in sorted(by_age.keys()):
-        texts = by_age[age]
-        if len(texts) <= n_test_per_age:
-            train_all.extend(texts)
-            continue
+    # Step 2: Split the remaining 90% into 85% Train and 15% Validation
+    train_val_ages = [m.age for m in train_val_entries]
+    train_entries, val_entries = train_test_split(
+        train_val_entries, 
+        test_size=val_size, 
+        stratify=train_val_ages, 
+        random_state=random_seed
+    )
 
-        train_set, test_set = train_test_split(
-            texts, test_size=n_test_per_age, random_state=random_seed
-        )
-        train_all.extend(train_set)
-        test_all.extend(test_set)
-
-    return train_all, test_all
-
+    return train_entries, val_entries, test_entries
 
 def save_split(
     train_entries: List[TextMetadata],
+    val_entries: List[TextMetadata],
     test_entries: List[TextMetadata],
     output_dir: str,
 ):
-    """Save the train/test split to JSON files for reproducibility."""
+    """Save the train/val/test splits to JSON files for reproducibility."""
     os.makedirs(output_dir, exist_ok=True)
 
     def to_records(entries):
@@ -77,29 +69,10 @@ def save_split(
     with open(os.path.join(output_dir, "train_split.json"), "w", encoding="utf-8") as f:
         json.dump(to_records(train_entries), f, ensure_ascii=False, indent=2)
 
+    with open(os.path.join(output_dir, "val_split.json"), "w", encoding="utf-8") as f:
+        json.dump(to_records(val_entries), f, ensure_ascii=False, indent=2)
+
     with open(os.path.join(output_dir, "test_split.json"), "w", encoding="utf-8") as f:
         json.dump(to_records(test_entries), f, ensure_ascii=False, indent=2)
 
-    print(f"Split saved: {len(train_entries)} train, {len(test_entries)} test -> {output_dir}")
-
-
-def load_split(output_dir: str, corpus_dir: str) -> Tuple[List[str], List[str]]:
-    """
-    Load a previously saved split. Returns (train_filepaths, test_filepaths).
-    Falls back to filepath stored in the JSON; if those don't exist, tries
-    to reconstruct from filename + corpus_dir.
-    """
-    def _load(path):
-        with open(path, "r", encoding="utf-8") as f:
-            records = json.load(f)
-        filepaths = []
-        for r in records:
-            fp = r["filepath"]
-            if not os.path.exists(fp):
-                fp = os.path.join(corpus_dir, r["filename"])
-            filepaths.append(fp)
-        return filepaths
-
-    train_fps = _load(os.path.join(output_dir, "train_split.json"))
-    test_fps = _load(os.path.join(output_dir, "test_split.json"))
-    return train_fps, test_fps
+    print(f"Splits saved: {len(train_entries)} Train, {len(val_entries)} Val, {len(test_entries)} Test -> {output_dir}")

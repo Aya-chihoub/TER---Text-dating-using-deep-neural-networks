@@ -89,8 +89,7 @@ class ModelConfig:
     num_filters: int = 64
     pool_size: int = 2                # MaxPool1d takes 1 out of every 2
     num_conv_layers: int = 3          # Conv1d+MaxPool layers stacked per branch
-    dropout: float = 0.1
-
+    dropout: float = 0.5      #  i changed this from 0.1 to 0.5 (À 0.1, le modèle n'éteignait que 10% de son "cerveau") ))
 
 # ── Training config ───────────────────────────────────────────────────────────
 
@@ -99,7 +98,7 @@ class TrainingConfig:
     """Configuration for the training loop."""
     batch_size: int = 32
     learning_rate: float = 1e-3
-    weight_decay: float = 1e-4
+    weight_decay: float = 1e-3  #pénalité imposée au modèle s'il donne trop d'importance à un seul mot ou à une seule caractéristique
     num_epochs: int = 50
     patience: int = 10                # early stopping patience
     lr_scheduler_factor: float = 0.5
