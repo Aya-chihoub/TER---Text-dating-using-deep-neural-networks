@@ -28,8 +28,8 @@ STOP_WORDS_JSON = os.path.join(LISTS_DIR, "mots-vides-countwordsfree",
 
 MIN_AGE = 30
 MAX_AGE = 70
-NUM_CLASSES = MAX_AGE - MIN_AGE + 1  # 41 classes
-
+ #NUM_CLASSES = MAX_AGE - MIN_AGE + 1    before it was :  41 classes
+NUM_CLASSES = 4  # 4 classes: 30-39, 40-49, 50-59, 60-70
 
 # ── Data config ───────────────────────────────────────────────────────────────
 
@@ -39,8 +39,8 @@ class DataConfig:
     corpus_dir: str = CORPUS_DIR
     n_test_per_age: int = 3           # fixed number of texts per age held for test
     random_seed: int = 42
-    sequence_length: int = 1000       # number of words per sample
-    stride: int = 500                 # sliding window stride (for extracting multiple samples per text)
+    sequence_length: int = 5000       # number of words per sample ( tokens ) 
+    stride: int = 5000                # CHANGE THIS FROM 500 TO 1000               # sliding window stride (for extracting multiple samples per text)
     min_age: int = MIN_AGE
     max_age: int = MAX_AGE
 
@@ -49,34 +49,48 @@ class DataConfig:
 
 @dataclass
 class FeatureConfig:
-    """Configuration for the hand-crafted feature extraction."""
-    # Which feature groups to enable
-    use_frequency: bool = True
-    use_word_length: bool = True
-    use_char_composition: bool = True
-    use_lexical: bool = True
-    use_positional: bool = True
-    use_context: bool = True
+    """Configuration for individual hand-crafted features."""
+    
+    # 1. Frequency
+    use_freq_count: bool = False
+    use_log_freq: bool = False
+    use_freq_rank: bool = False
+    use_global_freq: bool = False
+    
+    # 2. Word length
+    use_char_count: bool = True
+    use_syllable_count: bool = False
+
+    
+    # 3. Char composition
+    use_vowel_ratio: bool = False
+    use_accent_type: bool = False
+    
+    # 4. Lexical
+    use_punctuation_type: bool = True
+    use_pos_tag: bool = True
+    
+    # 5. Positional
+    use_pos_in_sent: bool = False
+    use_sent_length: bool = False
+    use_is_boundary: bool = False
+    
+    # 6. Context
+    use_adj_period: bool = False
+
     context_window: int = 5           # window size for context features
 
     @property
     def feature_dim(self) -> int:
-        """Compute the total feature vector dimension based on enabled groups."""
-        dim = 0
-        if self.use_frequency:
-            dim += 4    # freq_in_text, log_freq, freq_rank, global_freq
-        if self.use_word_length:
-            dim += 2    # word_length, syllable_count
-        if self.use_char_composition:
-            dim += 2    # vowel_ratio, accent_type
-        if self.use_lexical:
-            dim += 2    # punctuation_type, pos_tag
-        if self.use_positional:
-            dim += 3    # pos_in_sentence, sentence_length, is_sentence_boundary
-        if self.use_context:
-            dim += 1    # adjacent_to_period
-        return dim
-
+        """Calculates exact input size based on active features."""
+        return sum([
+            self.use_freq_count, self.use_log_freq, self.use_freq_rank, self.use_global_freq,
+            self.use_char_count, self.use_syllable_count,
+            self.use_vowel_ratio, self.use_accent_type,
+            self.use_punctuation_type, self.use_pos_tag,
+            self.use_pos_in_sent, self.use_sent_length, self.use_is_boundary,
+            self.use_adj_period
+        ])
 
 # ── Model config ──────────────────────────────────────────────────────────────
 
@@ -89,7 +103,7 @@ class ModelConfig:
     num_filters: int = 64
     pool_size: int = 2                # MaxPool1d takes 1 out of every 2
     num_conv_layers: int = 3          # Conv1d+MaxPool layers stacked per branch
-    dropout: float = 0.5      #  i changed this from 0.1 to 0.5 (À 0.1, le modèle n'éteignait que 10% de son "cerveau") ))
+    dropout: float = 0.3      #  i changed this from 0.1 to 0.5 (À 0.1, le modèle n'éteignait que 10% de son "cerveau")  but now second try: 0.3 seems to be a good balance for our dataset size and complexity))
 
 # ── Training config ───────────────────────────────────────────────────────────
 
@@ -97,8 +111,8 @@ class ModelConfig:
 class TrainingConfig:
     """Configuration for the training loop."""
     batch_size: int = 32
-    learning_rate: float = 1e-3
-    weight_decay: float = 1e-3  #pénalité imposée au modèle s'il donne trop d'importance à un seul mot ou à une seule caractéristique
+    learning_rate: float = 3e-3 
+    weight_decay: float = 1e-4  #pénalité imposée au modèle s'il donne trop d'importance à un seul mot ou à une seule caractéristique
     num_epochs: int = 50
     patience: int = 10                # early stopping patience
     lr_scheduler_factor: float = 0.5

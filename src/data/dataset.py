@@ -64,7 +64,12 @@ class TextAgeDataset(Dataset):
 
     def _build(self, entries: List[TextMetadata]):
         """Load texts, extract features, and slice into windows."""
-        for meta in entries:
+
+        # 1.A list to remember which document each chunk came from
+        self.chunk_doc_ids: List[int] = []
+
+        
+        for doc_id, meta in enumerate(entries):
             text = load_text(meta.filepath)
             tokens = text.split()
 
@@ -78,6 +83,7 @@ class TextAgeDataset(Dataset):
                 padded[:len(tokens)] = feats
                 label = meta.age - MIN_AGE  # 30→0, 31→1, …, 70→40
                 self.samples.append((padded, label))
+                self.chunk_doc_ids.append(doc_id)
                 continue
 
             # Extract features for the full text
@@ -88,6 +94,7 @@ class TextAgeDataset(Dataset):
             for start in range(0, len(tokens) - self.sequence_length + 1, self.stride):
                 window = feats[start : start + self.sequence_length]
                 self.samples.append((window, label))
+                self.chunk_doc_ids.append(doc_id)
 
     def __len__(self) -> int:
         return len(self.samples)

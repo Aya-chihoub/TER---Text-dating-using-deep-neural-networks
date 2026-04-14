@@ -16,6 +16,7 @@ from src.data.parser import load_corpus
 from src.data.split import split_train_val_test
 from src.data.dataset import build_datasets, TextAgeDataset
 from src.models.cnn import AgeCNN
+from src.data.features import FormFeatureExtractor
 
 def main():
     print("Loading configurations...")
@@ -44,18 +45,24 @@ def main():
     print(f"   - Val   : {len(val_entries)} texts")
     print(f"   - Test  : {len(test_entries)} texts")
 
-    # 2. Build datasets
+  
+   # 2. Build datasets
     print("\nBuilding Datasets (Feature extraction in progress)...")
+    
+    # We just pass the entire feat_cfg object directly! Clean and simple.
+    my_extractor = FormFeatureExtractor(config=feat_cfg)
+    
     train_ds, val_ds = build_datasets(
         train_entries, 
         val_entries,
+        extractor=my_extractor,
         sequence_length=data_cfg.sequence_length,
         train_stride=data_cfg.stride
     )
     
     test_ds = TextAgeDataset(
         test_entries, 
-        extractor=train_ds.extractor, 
+        extractor=my_extractor, 
         sequence_length=data_cfg.sequence_length, 
         stride=data_cfg.sequence_length
     )
@@ -96,6 +103,10 @@ def main():
         
         for features, labels in train_pbar:
             features, labels = features.to(device), labels.to(device)
+            # labels currently represent 0-40. We divide by 10 to get the decade.
+            # torch.clamp ensures age 70 (which becomes 4) gets pushed into bracket 3.
+            labels = labels // 10
+            labels = torch.clamp(labels, 0, 3)
             
             optimizer.zero_grad()
             logits = model(features)
@@ -126,6 +137,12 @@ def main():
         with torch.no_grad():
             for features, labels in val_pbar:
                 features, labels = features.to(device), labels.to(device)
+
+                labels = labels // 10
+                labels = torch.clamp(labels, 0, 3)
+
+
+
                 logits = model(features)
                 loss = criterion(logits, labels)
                 
@@ -165,20 +182,28 @@ def main():
 
     writer.close()
 
-    # 6. FINAL TEST SET EVALUATION
+   # 6. FINAL TEST SET EVALUATION
     print("\n" + "="*50)
     print("🎓 FINAL EVALUATION ON UNSEEN TEST DATA (10%)")
     print("="*50)
     
     best_model_path = os.path.join(train_cfg.checkpoint_dir, "best_model.pth")
-    model.load_state_dict(torch.load(best_model_path))
+    model.load_state_dict(torch.load(best_model_path, weights_only=True))
     model.eval()
     
     test_loss, correct_test, test_mae_sum, total_test = 0.0, 0, 0.0, 0
     
+    
+    all_preds = []
+    all_labels = []
+    
     with torch.no_grad():
         for features, labels in tqdm(test_loader, desc="Final Test"):
             features, labels = features.to(device), labels.to(device)
+
+            labels = labels // 10
+            labels = torch.clamp(labels, 0, 3)
+
             logits = model(features)
             loss = criterion(logits, labels)
             
@@ -188,14 +213,53 @@ def main():
             correct_test += (predicted == labels).sum().item()
             test_mae_sum += torch.abs(predicted - labels).sum().item()
             
+            # ON SAUVEGARDE LES PRÉDICTIONS DE CE BATCH
+            all_preds.extend(predicted.cpu().numpy())
+            all_labels.extend(labels.cpu().numpy())
+            
     avg_test_loss = test_loss / total_test
     test_acc = 100 * correct_test / total_test
     test_mae = test_mae_sum / total_test
     
-    print(f"\nFinal Results:")
+    print(f"\nFinal Results (Chunk Level):")
     print(f"🎯 Accuracy : {test_acc:.2f}%")
-    print(f"📏 MAE      : {test_mae:.2f} years")
+    print(f"📏 MAE      : {test_mae:.2f} decades")
     print(f"📉 Loss     : {avg_test_loss:.4f}\n")
+
+    # ==================================================
+    # LE VOTE MAJORITAIRE ICI !
+    # ==================================================
+    from collections import Counter
+    
+    print("==================================================")
+    print("🗳️ FINAL EVALUATION: MAJORITY VOTE (DOCUMENT LEVEL)")
+    print("==================================================")
+    
+    doc_predictions = {}
+    doc_true_labels = {}
+
+    for pred, true_label, doc_id in zip(all_preds, all_labels, test_ds.chunk_doc_ids):
+        if doc_id not in doc_predictions:
+            doc_predictions[doc_id] = []
+            doc_true_labels[doc_id] = true_label
+        
+        doc_predictions[doc_id].append(pred)
+
+    final_doc_preds = []
+    final_doc_labels = []
+
+    for doc_id, preds in doc_predictions.items():
+        majority_pred = Counter(preds).most_common(1)[0][0]
+        final_doc_preds.append(majority_pred)
+        final_doc_labels.append(doc_true_labels[doc_id])
+
+    correct_docs = sum(1 for p, t in zip(final_doc_preds, final_doc_labels) if p == t)
+    doc_accuracy = correct_docs / len(final_doc_preds)
+    doc_mae = sum(abs(p - t) for p, t in zip(final_doc_preds, final_doc_labels)) / len(final_doc_preds)
+
+    print(f"📄 Total Documents Evaluated: {len(final_doc_preds)} texts")
+    print(f"🎯 Document Accuracy (Vote) : {doc_accuracy * 100:.2f}%")
+    print(f"📏 Document MAE             : {doc_mae:.2f} decades\n")
 
 if __name__ == "__main__":
     main()
