@@ -34,7 +34,8 @@ import numpy as np
 import spacy
 from spacy.tokens import Doc
 
-from src.utils.config import LEXIQUE4_PATH, ACCENTED_CHARS_CSV
+# ⚠️ NOUVEL IMPORT : On importe FeatureConfig ici
+from src.utils.config import LEXIQUE4_PATH, ACCENTED_CHARS_CSV, FeatureConfig
 
 
 # ── spaCy French model (lazy-loaded) ────────────────────────────────────────
@@ -226,13 +227,6 @@ def _find_sentence_boundaries(tokens: List[str]) -> List[int]:
     """
     Return a list of the same length as `tokens` where each element
     is the sentence index that token belongs to.
-
-    Segmentation très simple : après chaque jeton exactement égal à
-    '.', '!' ou '?' (séparé par des espaces dans le texte), l'indice
-    de phrase augmente. Le jeton de ponctuation reste dans la phrase
-    qu'il termine ; le mot suivant commence une nouvelle phrase.
-
-    Exemple : ``Bonjour . Le`` → phrase 0 = [Bonjour, .], phrase 1 = [Le].
     """
     sentence_ids: List[int] = []
     sid = 0
@@ -247,34 +241,14 @@ def _find_sentence_boundaries(tokens: List[str]) -> List[int]:
 
 class FormFeatureExtractor:
     """
-    Extracts a fixed-size feature vector for every word (form) in a text.
-
-    Usage
-    -----
-    >>> extractor = FormFeatureExtractor()
-    >>> extractor.set_global_freq(global_counter)   # from training corpus
-    >>> tokens = text.split()
-    >>> matrix = extractor.extract(tokens)           # shape (n, feature_dim)
+    Extracts a fixed-size feature vector for every word (form) in a text,
+    based on the precise 14 individual rules in FeatureConfig.
     """
 
-    def __init__(
-        self,
-        use_frequency: bool = True,
-        use_word_length: bool = True,
-        use_char_composition: bool = True,
-        use_lexical: bool = True,
-        use_positional: bool = True,
-        use_context: bool = True,
-        context_window: int = 5,
-    ):
-        self.use_frequency = use_frequency
-        self.use_word_length = use_word_length
-        self.use_char_composition = use_char_composition
-        self.use_lexical = use_lexical
-        self.use_positional = use_positional
-        self.use_context = use_context
-        self.context_window = context_window
-
+    def __init__(self, config: Optional[FeatureConfig] = None):
+        # Utilise la config passée en paramètre, ou crée une nouvelle par défaut
+        self.cfg = config if config is not None else FeatureConfig()
+        
         self._global_freq: Optional[Counter] = None
         self._global_total: int = 0
 
@@ -289,37 +263,13 @@ class FormFeatureExtractor:
 
     @property
     def feature_dim(self) -> int:
-        """Total number of features per word."""
-        dim = 0
-        if self.use_frequency:
-            dim += 4    # freq_in_text, log_freq, freq_rank, global_freq
-        if self.use_word_length:
-            dim += 2
-        if self.use_char_composition:
-            dim += 2
-        if self.use_lexical:
-            dim += 2    # punctuation_type, pos_tag
-        if self.use_positional:
-            dim += 3
-        if self.use_context:
-            dim += 1    # adjacent_to_period
-        return dim
+        """Total number of active features per word."""
+        return self.cfg.feature_dim
 
     # ── Extraction ─────────────────────────────────────────────────────
 
     def extract(self, tokens: List[str]) -> np.ndarray:
-        """
-        Encode every token as a feature vector.
-
-        Parameters
-        ----------
-        tokens : list of str
-            The whitespace-split tokens of the text.
-
-        Returns
-        -------
-        features : np.ndarray, shape (len(tokens), self.feature_dim)
-        """
+        """Encode every token as a feature vector based on the 14 active flags."""
         n = len(tokens)
         if n == 0:
             return np.zeros((0, self.feature_dim), dtype=np.float32)
@@ -349,9 +299,9 @@ class FormFeatureExtractor:
             sid: sent_end[sid] - sent_start[sid] + 1 for sid in sent_start
         }
 
-        # ── POS tagging via spaCy ─────────────────────────────────────
+        # ── POS tagging via spaCy (Activé uniquement si use_pos_tag est True) ─
         pos_tags = [0] * n
-        if self.use_lexical:
+        if self.cfg.use_pos_tag:
             nlp = _get_nlp()
             spaces = [True] * n
             spaces[-1] = False
@@ -360,9 +310,7 @@ class FormFeatureExtractor:
                 doc = proc(doc)
             for j, spacy_tok in enumerate(doc):
                 pos_tags[j] = POS_TAG_MAP.get(spacy_tok.pos_, 0)
-            # Pure punctuation tokens (apostrophe seule, tiret, etc.) : spaCy peut predire
-            # des POS absurdes (VERB) car ces formes sont hors distribution apres split().
-            # On aligne pos_tag sur la grammaire universelle : PUNCT.
+            
             for j in range(n):
                 if _punctuation_type(tokens[j]) > 0:
                     pos_tags[j] = POS_TAG_MAP["PUNCT"]
@@ -375,54 +323,48 @@ class FormFeatureExtractor:
             tok_lower = tok.lower()
 
             # 1. Frequency features
-            if self.use_frequency:
-                feats[i, col] = word_freq[tok_lower]
-                col += 1
-                feats[i, col] = math.log1p(word_freq[tok_lower])
-                col += 1
-                feats[i, col] = word_rank[tok_lower]
-                col += 1
+            if self.cfg.use_freq_count:
+                feats[i, col] = word_freq[tok_lower]; col += 1
+            if self.cfg.use_log_freq:
+                feats[i, col] = math.log1p(word_freq[tok_lower]); col += 1
+            if self.cfg.use_freq_rank:
+                feats[i, col] = word_rank[tok_lower]; col += 1
+            if self.cfg.use_global_freq:
                 if self._global_freq is not None:
                     feats[i, col] = self._global_freq.get(tok_lower, 0)
                 col += 1
 
             # 2. Word length features
-            if self.use_word_length:
-                feats[i, col] = len(tok)
-                col += 1
-                feats[i, col] = _syllable_count(tok)
-                col += 1
+            if self.cfg.use_char_count:
+                feats[i, col] = len(tok); col += 1
+            if self.cfg.use_syllable_count:
+                feats[i, col] = _syllable_count(tok); col += 1
 
             # 3. Character composition
-            if self.use_char_composition:
-                feats[i, col] = _vowel_ratio(tok)
-                col += 1
-                feats[i, col] = _accent_type(tok)
-                col += 1
+            if self.cfg.use_vowel_ratio:
+                feats[i, col] = _vowel_ratio(tok); col += 1
+            if self.cfg.use_accent_type:
+                feats[i, col] = _accent_type(tok); col += 1
 
             # 4. Lexical features
-            if self.use_lexical:
-                feats[i, col] = _punctuation_type(tok)
-                col += 1
-                feats[i, col] = pos_tags[i]
-                col += 1
+            if self.cfg.use_punctuation_type:
+                feats[i, col] = _punctuation_type(tok); col += 1
+            if self.cfg.use_pos_tag:
+                feats[i, col] = pos_tags[i]; col += 1
 
             # 5. Positional features
-            if self.use_positional:
-                feats[i, col] = token_offset_in_sent[i]
-                col += 1
+            if self.cfg.use_pos_in_sent:
+                feats[i, col] = token_offset_in_sent[i]; col += 1
+            if self.cfg.use_sent_length:
                 sid = sentence_ids[i]
-                feats[i, col] = sent_lengths[sid]
-                col += 1
+                feats[i, col] = sent_lengths[sid]; col += 1
+            if self.cfg.use_is_boundary:
+                sid = sentence_ids[i]
                 is_boundary = (i == sent_start[sid]) or (i == sent_end[sid])
-                feats[i, col] = float(is_boundary)
-                col += 1
+                feats[i, col] = float(is_boundary); col += 1
 
-            # 6. Context: adjacent to a period '.' only (not comma, etc.)
-            #    If previous token is '.', this word is right after a sentence end →
-            #    typically sentence-initial; if next token is '.', right before a period
-            #    → typically sentence-final. (Distinct from ! / ? which do not trigger this bit.)
-            if self.use_context:
+            # 6. Context
+            if self.cfg.use_adj_period:
                 prev_is_period = i > 0 and tokens[i - 1] == "."
                 next_is_period = i + 1 < n and tokens[i + 1] == "."
                 feats[i, col] = 1.0 if (prev_is_period or next_is_period) else 0.0
@@ -431,18 +373,20 @@ class FormFeatureExtractor:
         return feats
 
     def feature_names(self) -> List[str]:
-        """Return human-readable names for each feature column."""
+        """Return human-readable names for each active feature column."""
         names: List[str] = []
-        if self.use_frequency:
-            names += ["freq_in_text", "log_freq", "freq_rank", "global_freq"]
-        if self.use_word_length:
-            names += ["word_length", "syllable_count"]
-        if self.use_char_composition:
-            names += ["vowel_ratio", "accent_type"]
-        if self.use_lexical:
-            names += ["punctuation_type", "pos_tag"]
-        if self.use_positional:
-            names += ["pos_in_sentence", "sentence_length", "is_sentence_boundary"]
-        if self.use_context:
-            names += ["adjacent_to_period"]
+        if self.cfg.use_freq_count: names.append("freq_in_text")
+        if self.cfg.use_log_freq: names.append("log_freq")
+        if self.cfg.use_freq_rank: names.append("freq_rank")
+        if self.cfg.use_global_freq: names.append("global_freq")
+        if self.cfg.use_char_count: names.append("word_length")
+        if self.cfg.use_syllable_count: names.append("syllable_count")
+        if self.cfg.use_vowel_ratio: names.append("vowel_ratio")
+        if self.cfg.use_accent_type: names.append("accent_type")
+        if self.cfg.use_punctuation_type: names.append("punctuation_type")
+        if self.cfg.use_pos_tag: names.append("pos_tag")
+        if self.cfg.use_pos_in_sent: names.append("pos_in_sentence")
+        if self.cfg.use_sent_length: names.append("sentence_length")
+        if self.cfg.use_is_boundary: names.append("is_sentence_boundary")
+        if self.cfg.use_adj_period: names.append("adjacent_to_period")
         return names
