@@ -49,32 +49,36 @@ class DataConfig:
 
 @dataclass
 class FeatureConfig:
-    """Configuration for individual hand-crafted features."""
-    
-    # 1. Frequency
+    """
+    Hand-crafted features: 4 active columns (reduced redundancy).
+
+    Kept global_freq only among frequency variants; doc-level freq_count / log_freq
+    disabled as highly correlated. Pair with per-document StandardScaler in dataset.py.
+    """
+
+    # 1. Frequency (only corpus-level signal)
     use_freq_count: bool = False
     use_log_freq: bool = False
     use_freq_rank: bool = False
-    use_global_freq: bool = False
-    
+    use_global_freq: bool = True
+
     # 2. Word length
     use_char_count: bool = True
     use_syllable_count: bool = False
 
-    
     # 3. Char composition
     use_vowel_ratio: bool = False
     use_accent_type: bool = False
-    
+
     # 4. Lexical
     use_punctuation_type: bool = True
     use_pos_tag: bool = True
-    
+
     # 5. Positional
     use_pos_in_sent: bool = False
     use_sent_length: bool = False
     use_is_boundary: bool = False
-    
+
     # 6. Context
     use_adj_period: bool = False
 
@@ -103,23 +107,25 @@ class ModelConfig:
     num_filters: int = 64
     pool_size: int = 2                # MaxPool1d takes 1 out of every 2
     num_conv_layers: int = 3          # Conv1d+MaxPool layers stacked per branch
-    dropout: float = 0.3      #  i changed this from 0.1 to 0.5 (À 0.1, le modèle n'éteignait que 10% de son "cerveau")  but now second try: 0.3 seems to be a good balance for our dataset size and complexity))
+    dropout: float = 0.5
 
 # ── Training config ───────────────────────────────────────────────────────────
 
 @dataclass
 class TrainingConfig:
-    """Configuration for the training loop."""
+    """Training loop: stronger regularization vs prior 3e-3 / 1e-4 / lighter dropout."""
     batch_size: int = 32
-    learning_rate: float = 3e-3 
-    weight_decay: float = 1e-4  #pénalité imposée au modèle s'il donne trop d'importance à un seul mot ou à une seule caractéristique
+    learning_rate: float = 1e-3
+    weight_decay: float = 5e-4
     num_epochs: int = 50
     patience: int = 10                # early stopping patience
     lr_scheduler_factor: float = 0.5
     lr_scheduler_patience: int = 5
     device: str = "cuda"              # "cuda" or "cpu"
-    checkpoint_dir: str = EXPERIMENTS_DIR
-    experiment_name: str = "default"
+    checkpoint_dir: str = field(
+        default_factory=lambda: os.environ.get("TER_CHECKPOINT_DIR", EXPERIMENTS_DIR)
+    )
+    experiment_name: str = "global_norm_v1"
 
 
 # ── Convenience: build all configs ────────────────────────────────────────────

@@ -7,7 +7,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from torch.optim.lr_scheduler import ReduceLROnPlateau
-from tqdm import tqdm
+from tqdm.auto import tqdm
 from torch.utils.tensorboard import SummaryWriter
 
 # Import your project modules
@@ -19,6 +19,12 @@ from src.models.cnn import AgeCNN
 from src.data.features import FormFeatureExtractor
 
 def main():
+    import builtins
+
+    def print(*args, **kwargs):
+        kwargs.setdefault("flush", True)
+        builtins.print(*args, **kwargs)
+
     print("Loading configurations...")
     data_cfg, feat_cfg, model_cfg, train_cfg = get_default_configs()
     
@@ -52,20 +58,29 @@ def main():
     # We just pass the entire feat_cfg object directly! Clean and simple.
     my_extractor = FormFeatureExtractor(config=feat_cfg)
     
-    train_ds, val_ds = build_datasets(
-        train_entries, 
+    train_ds, val_ds, feature_scaler = build_datasets(
+        train_entries,
         val_entries,
         extractor=my_extractor,
         sequence_length=data_cfg.sequence_length,
-        train_stride=data_cfg.stride
+        train_stride=data_cfg.stride,
     )
-    
+
     test_ds = TextAgeDataset(
-        test_entries, 
-        extractor=my_extractor, 
-        sequence_length=data_cfg.sequence_length, 
-        stride=data_cfg.sequence_length
+        test_entries,
+        extractor=my_extractor,
+        sequence_length=data_cfg.sequence_length,
+        stride=data_cfg.sequence_length,
+        feature_scaler=feature_scaler,
     )
+
+    # Quick check: train rows ~standardized globally; val differs slightly (expected)
+    print("\n=== Global normalization (sample windows) ===")
+    x_tr = train_ds[0][0].numpy()
+    x_va = val_ds[0][0].numpy()
+    print(f"First train window: mean={x_tr.mean():.4f}, std={x_tr.std():.4f} (per-window, not full train set)")
+    print(f"First val window:   mean={x_va.mean():.4f}, std={x_va.std():.4f}")
+    print("============================================\n")
 
     # 3. Create DataLoaders
     train_loader = DataLoader(train_ds, batch_size=train_cfg.batch_size, shuffle=True)
@@ -91,6 +106,7 @@ def main():
 
     best_val_loss = float('inf')
     epochs_without_improvement = 0
+    disable_batch_bars = os.environ.get("TER_EPOCH_ONLY", "").lower() in ("1", "true", "yes")
 
     # 5. Training Loop
     print("\nStarting training loop...")
@@ -99,7 +115,13 @@ def main():
         # --- TRAINING PHASE ---
         model.train()
         train_loss, correct_train, train_mae_sum, total_train = 0.0, 0, 0.0, 0
-        train_pbar = tqdm(train_loader, desc=f"Epoch {epoch+1}/{train_cfg.num_epochs} [Train]", leave=False)
+        train_pbar = tqdm(
+            train_loader,
+            desc=f"Epoch {epoch+1}/{train_cfg.num_epochs} [Train]",
+            leave=False,
+            file=sys.stdout,
+            disable=disable_batch_bars,
+        )
         
         for features, labels in train_pbar:
             features, labels = features.to(device), labels.to(device)
@@ -132,7 +154,13 @@ def main():
         # --- VALIDATION PHASE ---
         model.eval()
         val_loss, correct_val, val_mae_sum, total_val = 0.0, 0, 0.0, 0
-        val_pbar = tqdm(val_loader, desc=f"Epoch {epoch+1}/{train_cfg.num_epochs} [Val]", leave=False)
+        val_pbar = tqdm(
+            val_loader,
+            desc=f"Epoch {epoch+1}/{train_cfg.num_epochs} [Val]",
+            leave=False,
+            file=sys.stdout,
+            disable=disable_batch_bars,
+        )
         
         with torch.no_grad():
             for features, labels in val_pbar:
@@ -198,7 +226,7 @@ def main():
     all_labels = []
     
     with torch.no_grad():
-        for features, labels in tqdm(test_loader, desc="Final Test"):
+        for features, labels in tqdm(test_loader, desc="Final Test", file=sys.stdout, disable=disable_batch_bars):
             features, labels = features.to(device), labels.to(device)
 
             labels = labels // 10
