@@ -11,10 +11,14 @@ from tqdm.auto import tqdm
 from torch.utils.tensorboard import SummaryWriter
 
 # Import your project modules
-from src.utils.config import get_default_configs
+from src.utils.config import get_default_configs, NORMALIZATION_SUBDIR
 from src.data.parser import load_corpus
 from src.data.split import split_train_val_test
 from src.data.dataset import build_datasets, TextAgeDataset
+from src.data.normalization import (
+    save_normalization_artifacts,
+    preview_stats,
+)
 from src.models.cnn import AgeCNN
 from src.data.features import FormFeatureExtractor
 
@@ -58,7 +62,7 @@ def main():
     # We just pass the entire feat_cfg object directly! Clean and simple.
     my_extractor = FormFeatureExtractor(config=feat_cfg)
     
-    train_ds, val_ds, feature_scaler = build_datasets(
+    train_ds, val_ds, feature_scaler, n_fit_rows = build_datasets(
         train_entries,
         val_entries,
         extractor=my_extractor,
@@ -74,12 +78,33 @@ def main():
         feature_scaler=feature_scaler,
     )
 
+    # ── Persist the global-normalization artifacts ─────────────────────────
+    # Fit is on TRAIN ONLY; the same scaler is then applied (transform) to val
+    # and test here, and to brand-new test sets at inference via
+    # ``src.data.normalization.load_normalization_artifacts``.
+    norm_dir = os.path.join(train_cfg.checkpoint_dir, NORMALIZATION_SUBDIR)
+    os.makedirs(norm_dir, exist_ok=True)
+    save_normalization_artifacts(
+        scaler=feature_scaler,
+        extractor=my_extractor,
+        out_dir=norm_dir,
+        sequence_length=data_cfg.sequence_length,
+        stride=data_cfg.stride,
+        n_fit_rows=n_fit_rows,
+        feature_names=my_extractor.feature_names(),
+    )
+    print(f"\n💾 Saved normalization artifacts to: {norm_dir}")
+    print("   (feature_normalization_stats.csv, feature_scaler.pkl, "
+          "global_word_frequencies.csv, normalization_manifest.json)")
+
     # Quick check: train rows ~standardized globally; val differs slightly (expected)
     print("\n=== Global normalization (sample windows) ===")
     x_tr = train_ds[0][0].numpy()
     x_va = val_ds[0][0].numpy()
     print(f"First train window: mean={x_tr.mean():.4f}, std={x_tr.std():.4f} (per-window, not full train set)")
     print(f"First val window:   mean={x_va.mean():.4f}, std={x_va.std():.4f}")
+    print("\n--- Feature normalization stats (train-only fit) ---")
+    preview_stats(feature_scaler, my_extractor.feature_names())
     print("============================================\n")
 
     # 3. Create DataLoaders

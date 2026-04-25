@@ -85,8 +85,11 @@ class TextAgeDataset(Dataset):
         self._build(entries)
 
     def _build(self, entries: List[TextMetadata]):
-        """Load texts, extract features, and slice into windows."""
-        for meta in entries:
+        """Load texts, extract features, optional global scaling, slice into windows."""
+
+        self.chunk_doc_ids: List[int] = []
+
+        for doc_id, meta in enumerate(entries):
             text = load_text(meta.filepath)
             tokens = text.split()
 
@@ -111,7 +114,8 @@ class TextAgeDataset(Dataset):
             label = meta.age - MIN_AGE
             for start in range(0, len(tokens) - self.sequence_length + 1, self.stride):
                 window = feats[start : start + self.sequence_length]
-                self.samples.append((window, label))
+                self.samples.append((window.astype(np.float32, copy=False), label))
+                self.chunk_doc_ids.append(doc_id)
 
     def __len__(self) -> int:
         return len(self.samples)
@@ -131,12 +135,14 @@ def build_datasets(
     sequence_length: int = 512,
     train_stride: int = 256,
     test_stride: Optional[int] = None,
-) -> Tuple[TextAgeDataset, TextAgeDataset, StandardScaler]:
+) -> Tuple[TextAgeDataset, TextAgeDataset, StandardScaler, int]:
     """
     Build train / val (or test) datasets with the same global scaler.
 
-    The scaler is fit on all training token-rows (from sliding windows and short texts),
-    then applied via ``transform`` when building both splits.
+    The scaler is fit on **training token-rows only** (from sliding windows and
+    short texts), then applied via ``transform`` when building both splits.
+    Returns the fitted scaler together with ``n_fit_rows`` so the caller can
+    persist the exact statistics used at training time.
     """
     if extractor is None:
         extractor = FormFeatureExtractor()
@@ -152,16 +158,18 @@ def build_datasets(
     extractor.set_global_freq(global_freq)
     print(f"  → {len(global_freq)} unique words, {sum(global_freq.values())} total tokens")
 
-    print("Fitting global StandardScaler on training features ...")
+    print("Fitting global StandardScaler on training features (TRAIN ONLY) ...")
     fit_mat = collect_train_matrix_for_scaler(
         train_entries, extractor, sequence_length, train_stride
     )
     scaler = StandardScaler()
     if fit_mat.shape[0] == 0:
         scaler.fit(np.zeros((1, extractor.feature_dim), dtype=np.float64))
+        n_fit_rows = 0
     else:
         scaler.fit(fit_mat)
-    print(f"  → fitted on {fit_mat.shape[0]} token-rows (train only)")
+        n_fit_rows = int(fit_mat.shape[0])
+    print(f"  → fitted on {n_fit_rows} token-rows (train only)")
     if scaler.scale_ is not None and len(scaler.mean_) >= 3:
         print(f"  → mean (first 3): {scaler.mean_[:3]}")
         print(f"  → scale (first 3): {scaler.scale_[:3]}")
@@ -188,4 +196,4 @@ def build_datasets(
     )
     print(f"  → {len(test_ds)} samples")
 
-    return train_ds, test_ds, scaler
+    return train_ds, test_ds, scaler, n_fit_rows

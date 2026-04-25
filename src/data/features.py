@@ -259,6 +259,15 @@ class FormFeatureExtractor:
         self._global_freq = freq
         self._global_total = sum(freq.values())
 
+    def get_global_freq(self) -> Optional[Counter]:
+        """Return the global word frequency table (or None if never set)."""
+        return self._global_freq
+
+    @property
+    def global_total_tokens(self) -> int:
+        """Total training tokens used to build the global frequency table."""
+        return self._global_total
+
     # ── Dimension ──────────────────────────────────────────────────────
 
     @property

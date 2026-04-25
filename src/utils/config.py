@@ -13,6 +13,10 @@ from typing import List, Optional
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CORPUS_DIR = os.path.join(PROJECT_ROOT, "corpus_age_etudiant")
 EXPERIMENTS_DIR = os.path.join(PROJECT_ROOT, "experiments")
+# Subfolder (relative to the current run's checkpoint_dir) where the fitted
+# StandardScaler, its stats table, and the global word-frequency table are saved
+# so a brand-new test set can be normalized with the *exact* training stats.
+NORMALIZATION_SUBDIR = "normalization"
 
 # ── Lists / external resources ────────────────────────────────────────────
 LISTS_DIR = os.path.join(PROJECT_ROOT, "lists")
@@ -39,8 +43,11 @@ class DataConfig:
     corpus_dir: str = CORPUS_DIR
     n_test_per_age: int = 3           # fixed number of texts per age held for test
     random_seed: int = 42
-    sequence_length: int = 5000       # number of words per sample ( tokens ) 
-    stride: int = 5000                # CHANGE THIS FROM 500 TO 1000               # sliding window stride (for extracting multiple samples per text)
+    # Test A (avril 2026): revert to 5000-token windows to recover the Config B
+    # baseline (~60.57 % document accuracy). The 10000-token bump regressed to
+    # ~38 % document because the training set shrank from ~31k to ~7.5k chunks.
+    sequence_length: int = 5000       # number of words per sample (tokens)
+    stride: int = 5000                # non-overlapping windows (stride == sequence_length)
     min_age: int = MIN_AGE
     max_age: int = MAX_AGE
 
@@ -125,7 +132,9 @@ class TrainingConfig:
     checkpoint_dir: str = field(
         default_factory=lambda: os.environ.get("TER_CHECKPOINT_DIR", EXPERIMENTS_DIR)
     )
-    experiment_name: str = "global_norm_v1"
+    # Test A: replay Config B (4 features, 5000-token windows, global norm)
+    # to confirm we recover ~60 % document accuracy before changing features.
+    experiment_name: str = "test_a_config_b_5k"
 
 
 # ── Convenience: build all configs ────────────────────────────────────────────
